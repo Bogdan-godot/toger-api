@@ -55,6 +55,8 @@ class MessageHandler(Middleware):
         
         if handler:
             user_id = event.get("from_id", 0)
+            user_hash = event.get("uh")
+            
             chat_id: int = event.get("chat_id", 0)
             
             msg_obj = await MessageObject.create(
@@ -63,6 +65,8 @@ class MessageHandler(Middleware):
                 type=type,
                 
                 user_id=user_id,
+                user_hash=user_hash,
+                
                 chat_id=chat_id,
                 
                 message_id=event.get("message_id", 0),

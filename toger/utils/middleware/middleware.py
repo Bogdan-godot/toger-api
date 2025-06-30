@@ -19,8 +19,8 @@ class Middleware:
             return func
         return wrapper
     
-    async def middleware_handle(self, handle, update: dict) -> None:
+    async def middleware_handle(self, handle, update: dict, *args) -> None:
         if len(self.middlewares) > 0:
-            asyncio.create_task(self.middlewares[0](handle, update))
+            asyncio.create_task(self.middlewares[0](handle, update, *args))
         else:
-            await handle(update)
+            await handle(update, *args)

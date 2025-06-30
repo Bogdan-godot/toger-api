@@ -7,7 +7,27 @@ from .. import base, loggers
 from ..types.from_user import From_user
 from ..models import SendMessageModel
 
+
 class SendMessage(SendMessageModel):
+    """
+    A class representing a message to be sent to a chat.
+
+    This class inherits from SendMessageModel and provides functionality to send a message to a specified chat.
+    It validates the message text and constructs the necessary payload for the API request.
+
+    Args:
+        auth_string (Optional[str]): The authentication string for API requests.
+        chat_id (int): The ID of the chat where the message will be sent.
+        text (str): The text content of the message.
+
+    Raises:
+        ValidationError: If the message text is empty or None.
+        TogerBadRequest: If the API request fails.
+
+    Methods:
+        __call__: Asynchronously sends the message to the API and returns the message ID.
+    """
+
     def __init__(self, auth_string: Optional[str],
                  chat_id: int,
                  text: str):

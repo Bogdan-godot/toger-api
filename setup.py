@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="toger",
-    version="0.0.1",
+    version="0.1.1",
     description="A Python package for the toger project.",
     author="Bogdan Boris",
     author_email="gdrghdhgddy@gmail.com",
