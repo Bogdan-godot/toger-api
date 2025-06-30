@@ -1,6 +1,6 @@
 ## Установка
 ```bash
-pip install git+https://github.com/Bogdan-godot/toger-api.git
+pip install git+https://github.com/Bogdan-godot/toger-api.git@test
 ```
 
 ### В данный момент библиотека toger не имеет документации, но не смотря на это мы дадим вам пример кода на ней
